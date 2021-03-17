@@ -17,17 +17,19 @@ docker run -it --name <container name> <image name or id>
 
 #Docker command to see all running container: docker ps
 
-# run inspec's test locally
+# Run inspec's test locally
 inspec exec <test file name with path>
 
-# run multiple tests at a specified path
+# Run multiple tests at a specified path
 inspec exec <tests path>
 
-# run test on docker container
+# Run test on docker container
 inspec exec <test file with path> -t docker://container_id
 
+# Generate test report after test execution
+inspec exec <test file or tests path> --reporter junit2:<any-path>/junit.xml html:<any-path>/index.html
 
 
 ##refrences: 
 docker - https://docs.docker.com/engine/reference/commandline/docker/
-inspec - https://docs.chef.io/inspec/cli/
+inspec - https://docs.chef.io/inspec
