@@ -1,7 +1,7 @@
 FROM chef/inspec:current
 
-COPY ./web/* ./web/
-COPY ./tests/* ./web/
-WORKDIR ./web
-ENTRYPOINT ["inspec", "exec",  "file_test.rb", "--"]
-CMD ["/bin/bash chef-license accept-silent"]
+COPY ./src/backend ./project/backend
+COPY ./src/frontend ./project/frontend
+COPY ./tests ./project/tests
+WORKDIR ./project/tests
+ENTRYPOINT ["inspec", "exec",  "<test file name with path>"]

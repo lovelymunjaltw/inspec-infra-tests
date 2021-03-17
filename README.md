@@ -1,29 +1,33 @@
 # InSpec: Inspect Your Infrastructure
 
-InSpec is an open-source testing framework for infrastructure with a human- and machine-readable language for specifying compliance, security and policy requirements.
-Chef InSpec is a "free and open-source framework for testing and auditing your applications and infrastructure
+Chef InSpec is an open-source framework for testing and auditing your applications and infrastructure.
 
-"Chef InSpec works by comparing the actual state of your system with the desired state that you express in easy-to-read and easy-to-write Chef InSpec code. Chef InSpec detects violations and displays findings in the form of a report, but puts you in control of remediation."
 
 ## Quick Start & Documentation
+Inspec Install : https://docs.chef.io/inspec/install/
 
-Inspec Install
+#Docker command to build/create an image from default 'Dockerfile':
+docker build . -t <image-name>
 
-##Using Curl
-You can download Chef InSpec via curl script:
+#Docker command to build an image from any other Dockerfile:
+docker build . -f <docker file name> -t <image-name>
 
-curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec
+#Docker command to run container (after build image):
+docker run -it --name <container name> <image name or id>
 
+#Docker command to see all running container: docker ps
 
-##Using Docker
+# run inspec's test locally
+inspec exec <test file name with path>
 
-checkout the latest image tag at https://hub.docker.com/r/chef/inspec/
-docker pull chef/inspec
-
-
-# run test locally
-inspec exec test.rb
+# run multiple tests at a specified path
+inspec exec <tests path>
 
 # run test on docker container
-inspec exec test.rb -t docker://container_id
+inspec exec <test file with path> -t docker://container_id
 
+
+
+##refrences: 
+docker - https://docs.docker.com/engine/reference/commandline/docker/
+inspec - https://docs.chef.io/inspec/cli/
