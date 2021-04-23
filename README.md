@@ -5,35 +5,35 @@ Chef InSpec is an open-source framework for testing and auditing your applicatio
 ## Quick Start & Documentation
 Inspec Install : https://docs.chef.io/inspec/install/
 
-## Docker command to build/create an image from default 'Dockerfile':
+
+## Docker commands:
+
+1. Command to build/create an image from default 'Dockerfile':
 docker build . -t <image-name>
 
-##  Docker command to build an image from any other Dockerfile:
+2. command to build an image from any other Dockerfile:
 docker build . -f <docker file name> -t <image-name>
 
-## Docker command to run container (after build image):
+3. command to run container (after build image):
 docker run -it --name <container name> <image name or id>
 
-##  Docker command to see all running container: docker ps
+4. command to see all running container: docker ps
 
-## Run inspec's test locally
+
+## Inspec commands:
+
+1. Run a single inspec test locally
 inspec exec <test file name with path>
 
-## Run multiple tests at a specified path
+2. Run multiple tests at a specified path
 inspec exec <tests path>
 
-## Run test on docker container
+3. Run test against docker container
 inspec exec <test file with path> -t docker://container_id
 
-## Generate test report after test execution
+4. Generate test report after test execution
 inspec exec <test file or tests path> --reporter junit2:<any-path>/junit.xml html:<any-path>/index.html
 
-
-## refrences: 
-docker - https://docs.docker.com/engine/reference/commandline/docker/
-inspec - https://docs.chef.io/inspec
-
-========================================================================================================
 
 ## For AWS Tests:
 
@@ -54,5 +54,7 @@ Note - You can also explore Billing service to get idea how/when does AWS charge
 4. Quick configuration with aws configure: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html
 
 
-## refrences: 
-https://github.com/inspec/inspec-aws
+## Refrences: 
+docker - https://docs.docker.com/engine/reference/commandline/docker/
+inspec - https://docs.chef.io/inspec
+aws specific, inspec - https://github.com/inspec/inspec-aws
